@@ -8,5 +8,8 @@
     <h1>Name: <%= @recipe.name %></h1>
     <h2>Ingredients: <%= @recipe.ingredients%></h2>
     <h3>Cook Time: <%= @recipe.cook_time%> minutes</h3>
+    <form action="/recipes/<%=@recipe.id%>/edit" method="post">
+
+    </form>
   </body>
 </html>
