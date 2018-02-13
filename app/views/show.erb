@@ -9,7 +9,7 @@
     <h2>Ingredients: <%= @recipe.ingredients%></h2>
     <h3>Cook Time: <%= @recipe.cook_time%> minutes</h3>
     <form action="/recipes/<%=@recipe.id%>/edit" method="get">
-
+      <input type="submit" name="edit" value="Edit">
     </form>
   </body>
 </html>
