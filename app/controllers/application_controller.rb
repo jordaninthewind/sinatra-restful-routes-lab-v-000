@@ -31,4 +31,17 @@ class ApplicationController < Sinatra::Base
 
     erb :show
   end
+
+  get '/posts/:id/edit' do  #load edit form
+    @post = Post.find_by_id(params[:id])
+    erb :edit
+  end
+
+  patch '/posts/:id' do #edit action
+    @post = Post.find_by_id(params[:id])
+    @post.title = params[:title]
+    @post.content = params[:content]
+    @post.save
+    redirect to "/posts/#{@post.id}"
+  end  
 end
