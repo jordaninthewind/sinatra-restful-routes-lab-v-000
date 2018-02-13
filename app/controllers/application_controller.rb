@@ -37,11 +37,11 @@ class ApplicationController < Sinatra::Base
     erb :edit
   end
 
-  patch '/posts/:id' do #edit action
-    @post = Post.find_by_id(params[:id])
+  patch '/recipes/:id' do #edit action
+    @recipe = Recipe.find_by_id(params[:id])
     @post.title = params[:title]
     @post.content = params[:content]
     @post.save
     redirect to "/posts/#{@post.id}"
-  end  
+  end
 end
